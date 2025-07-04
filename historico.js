@@ -4,7 +4,7 @@ const textareaEditor = document.querySelector('#textareaEditor')
 textareaEditor.addEventListener('keydown', Salvar)
 
 const botao = document.querySelector('#revisao')
-botao.addEventListener('click', Reempilhar)
+botao.addEventListener('click', Exibir)
 
 const stack = new LinkedStack()
 function Salvar() {
@@ -12,13 +12,11 @@ function Salvar() {
     stack.push(content)
 }
 const newStack = new LinkedStack()
-function Reempilhar() {
+function Exibir() {
     const textareaResult = document.querySelector('#textareaResult');
     textareaResult.value = '';
 
     const fases = [];
-
-
     while (!stack.isEmpty()) {
         newStack.push(stack.pop());
     }
